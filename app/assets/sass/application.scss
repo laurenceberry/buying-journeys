@@ -29,3 +29,29 @@ $path: "/public/images/";
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.task-list li.stage{
+    margin: 15px 0 20px;
+    padding: 0 0 15px 0px;
+    border-bottom: 1px solid $grey-3;
+}
+
+.task-list li.stage h2{
+    margin: 15px 0;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.task-list li.stage{
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 30px;
+}
+
+.task-list li.stage::before{
+    content: counter(step-counter)'.';
+    font-weight: bold;
+    font-size: 27px;
+    position: absolute;
+    left: 0;
+}

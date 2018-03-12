@@ -6,7 +6,8 @@ frameworks:
     endDate:
     lots:
       - lot1:
-        name: lot1
+        keyName: lot1
+        name: Direct award
         steps:
           - requiremnts:
             name: Publish requirements
@@ -35,7 +36,8 @@ frameworks:
               - awardReport
 
       - lot2:
-        name: lot2
+        keyName: lot2
+        name: Direct award and further competition
         steps:
           - shortlist:
             name: Shortlist
@@ -56,7 +58,8 @@ frameworks:
               - awardReport
 
       - lot3:
-        name: lot3
+        keyName: lot3
+        name: Further competition only
         steps:
           - shortlist:
             name: Shortlist

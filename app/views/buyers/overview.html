@@ -9,36 +9,40 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
-
+    
+        
     	{% for framework in frameworks %}
     		{% if framework.framework == frameworkSlug %}
     			{% for lot in framework.lots %}
-    				{% if lot.name == lotSlug %}
-              <h1 class="heading-large">{{lot.name}}</h1>
-    					{% for step in lot.steps %}
-    						<h2 class="heading-medium">{{step.name}}</h2>
-                <ul>
-    						{% for module in step.modules %}
-    							<li>
-                    {% for globalModule in globalModules %}
-                      {% if globalModule.keyname == module %}
+    				{% if lot.keyName == lotSlug %}
+              <br>
+              <h1 class="heading-xlarge">{{lot.name}}</h1>
+              <ol class="task-list">
+      					{% for step in lot.steps %}
+                  <li class="stage">
+        						<h2 class="heading-medium">{{step.name}}</h2>
+                    <ul>
+        						{% for module in step.modules %}
+        							<li>
+                        {% for globalModule in globalModules %}
+                          {% if globalModule.keyname == module %}
 
-                        <a href="">{{globalModule.name}}</a>
-                        {% if globalModule.optional == true %}
-                          (Optional)
-                        {% endif %}
-                      {% endif %}
-                    {% endfor %}
+                            <a href="">{{globalModule.name}}</a>
+                            {% if globalModule.optional == true %}
+                              (Optional)
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                      </li>
+        						{% endfor %}
+                    </ul>
                   </li>
-    						{% endfor %}
-                </ul>
-    					{% endfor %}
+      					{% endfor %}
+              </ol>
     				{% endif %}
     			{% endfor %}
     		{% endif %}
     	{% endfor %}
-
-
     </div>
   </div>
 </main>
