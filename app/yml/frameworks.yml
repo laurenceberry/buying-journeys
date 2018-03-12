@@ -1,0 +1,112 @@
+frameworks:
+
+  - framework: RM1
+    name: Software
+    startDate:
+    endDate:
+    lots:
+      - lot1:
+        name: lot1
+        steps:
+          - requiremnts:
+            name: Publish requirements
+            modules:
+              - draft
+              - q&a
+              - publish
+
+          - shortlist:
+            name: Shortlist
+            modules:
+              - viewResponses
+              - shortlist
+        
+          - evaluate:
+            name: Evaluate
+            modules:
+              - criteria
+              - evaluate
+          
+          - award:
+            name: Award
+            modules:
+              - contract
+              - reportOutcome
+              - awardReport
+
+      - lot2:
+        name: lot2
+        steps:
+          - shortlist:
+            name: Shortlist
+            modules:
+              - search
+          
+          - evaluate:
+            name: Evaluate
+            modules:
+              - criteria
+              - evaluate
+          
+          - award:
+            name: Award
+            modules:
+              - contract
+              - reportOutcome
+              - awardReport
+
+      - lot3:
+        name: lot3
+        steps:
+          - shortlist:
+            name: Shortlist
+            modules:
+              - search
+          
+          - evaluate:
+            name: Evaluate
+            modules:
+              - evaluate
+          
+          - award:
+            name: Award
+            modules:
+              - contract
+              - reportOutcome
+              - awardReport
+
+globalModules:
+  - draft:
+    keyname: draft
+    name: Write requirements
+  - q&a:
+    keyname: q&a
+    name: Describe your question and answer session
+  - publish:
+    keyname: publish
+    name: Publish your requirements
+  - search:
+    keyname: search
+    name: Search for suppliers
+  - viewResponses:
+    keyname: viewResponses
+    name: View responses
+  - shortlist:
+    keyname: shortlist
+    name: Shortlist suppliers
+  - criteria:
+    keyname: criteria
+    name: Set evaluation criteria
+    optional: true
+  - evaluate:
+    keyname: evaluate
+    name: Evaluate suppliers
+  - contract:
+    keyname: contract
+    name: Download the call-off contract
+  - reportOutcome:
+    keyname: reportOutcome
+    name: Let suppliers know the outcome
+  - awardReport:
+    keyname: awardReport
+    name: View the award report
